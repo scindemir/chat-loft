@@ -1,8 +1,8 @@
 import LoginWindow from './ui/loginWindow';
 import MainWindow from './ui/mainWindow';
 import UserName from './ui/userName';
-import UserPhoto from './ui/userPhoto';
 import UserList from './ui/userList';
+import UserPhoto from './ui/userPhoto';
 import MessageList from './ui/messageList';
 import MessageSender from './ui/messageSender';
 import WSClient from './wsClient';
@@ -42,8 +42,8 @@ export default class Chat {
     fetch('/chat/upload-photo', {
       method: 'post',
       body: JSON.stringify({
-      name: this.ui.userName.get(),
-      image: data,
+        name: this.ui.userName.get(),
+        image: data,
       }),
     });
   }

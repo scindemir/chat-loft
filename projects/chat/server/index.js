@@ -1,4 +1,4 @@
-const { fstat } = require('fs');
+const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const Index = require('ws');
@@ -20,10 +20,10 @@ const server = http.createServer(async (req, res) => {
       const fallBackPath = path.resolve(__dirname, '../nophoto.png');
       const filePath = path.resolve(__dirname, '../photos', imageName);
 
-      if (fstat.existsSync(filePath)) {
-        return fstat.createReadStream(filePath).pipe(res);
+      if (fs.existsSync(filePath)) {
+        return fs.createReadStream(filePath).pipe(res);
       } else {
-        return fstat.createReadStream(fallBackPath).pipe(res);
+        return fs.createReadStream(fallBackPath).pipe(res);
       }
     } else if (req.url.endsWith('/upload-photo')) {
       const body = await readBody(req);
