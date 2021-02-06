@@ -37,7 +37,7 @@ module.exports = {
   entry: entries,
   output: {
     filename: mode === 'production' ? 'name/[chunkhash].js' : '[name]/[name].js',
-    path: path.resolve('dist'),
+    path: path.resolve('docs'),
   },
   mode,
   devServer: {

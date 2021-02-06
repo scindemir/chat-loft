@@ -9,11 +9,10 @@ export default class LoginWindow {
 
     submitButton.addEventListener('click', () => {
       loginError.textContent = '';
-
       const name = loginNameInput.value.trim();
 
       if (!name) {
-        loginError.textContent = "Enter your nickname";
+        loginError.textContent = 'Enter your nickname';
       } else {
         this.onLogin(name);
       }
