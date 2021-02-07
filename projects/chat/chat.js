@@ -81,7 +81,7 @@ export default class Chat {
       );
 
       for (const avatar of avatars) {
-        avatar.style.backgroundImage = `url(/chat/photos${data.name}).png?t=${Date.now()})`;
+        avatar.style.backgroundImage = `url(/chat/photos/${data.name}.png?t=${Date.now()})`;
       }
     }
   }

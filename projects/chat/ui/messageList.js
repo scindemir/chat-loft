@@ -15,7 +15,8 @@ export default class MessageList {
     item.classList.add('message-item');
     item.innerHTML = `
     <div class="message-item-left">
-      <div class="message-item-photo" data-role="user-avatar" data-user=${sanitize(from)}></div>
+      <div style="background-image: url(/chat/photos/${from}.png?t-${Date.now()})"
+      class="message-item-photo" data-role="user-avatar" data-user=${sanitize(from)}></div>
     </div>
     <div class="message-item-right">
       <div class="message-item-header">

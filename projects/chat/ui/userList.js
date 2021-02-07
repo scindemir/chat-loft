@@ -19,9 +19,11 @@ export default class UserList {
 
       profPic.setAttribute('data-role', 'user-avatar');
       profPic.setAttribute('data-user', `${name}`);
+      profPic.classList.add('user-list-avatar');
       profPic.style.width = "26px";
       profPic.style.height = "26px";
       profPic.style.marginTop ="-2px";
+      profPic.style.backgroundImage = `url(/chat/photos/${name}.png?t-${Date.now()})`;
 
       wrapper.classList.add('user-wrapper');
       wrapper.append(profPic);

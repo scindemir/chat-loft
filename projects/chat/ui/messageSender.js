@@ -11,6 +11,15 @@ export default class MessageSender {
         this.onSend(message);
       }
     });
+
+    this.messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const message = this.messageInput.value.trim();
+        if (message) {
+          this.onSend(message);
+        }
+      }
+    });
   }
 
   clear() {

@@ -15,7 +15,7 @@ function readBody(req) {
 
 const server = http.createServer(async (req, res) => {
   try {
-    if (/\/photos\/.+\/png/.test(req.url)) {
+    if (/\/photos\/.+\.png/.test(req.url)) {
       const [, imageName] = req.url.match(/\/photos\/(.+\.png)/) || [];
       const fallBackPath = path.resolve(__dirname, '../nophoto.png');
       const filePath = path.resolve(__dirname, '../photos', imageName);
