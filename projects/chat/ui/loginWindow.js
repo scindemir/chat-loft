@@ -3,6 +3,12 @@ export default class LoginWindow {
     this.element = element;
     this.onLogin = onLogin;
 
+    function focus() {
+      document.querySelector(".login-name-input").focus();
+    }
+
+    focus();
+
     const loginNameInput = element.querySelector('[data-role=login-name-input]');
     const submitButton = element.querySelector('[data-role=login-submit]');
     const loginError = element.querySelector('[data-role=login-error]');
