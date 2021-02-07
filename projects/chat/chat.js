@@ -60,6 +60,12 @@ export default class Chat {
     this.ui.mainWindow.show();
     this.ui.userName.set(name);
     this.ui.userPhoto.set(`/chat/photos/${name}.png?t=${Date.now()}`);
+    
+    function focus() {
+      document.querySelector(".message-input").focus();
+    }
+
+    focus();
   }
 
   onMessage({ type, from, data }) {

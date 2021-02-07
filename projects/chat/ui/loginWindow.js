@@ -7,14 +7,24 @@ export default class LoginWindow {
     const submitButton = element.querySelector('[data-role=login-submit]');
     const loginError = element.querySelector('[data-role=login-error]');
 
-    submitButton.addEventListener('click', () => {
+    function doLogin() {
       loginError.textContent = '';
       const name = loginNameInput.value.trim();
 
       if (!name) {
         loginError.textContent = 'Enter your nickname';
       } else {
-        this.onLogin(name);
+        onLogin(name);
+      }
+    }
+
+    submitButton.addEventListener('click', () => {
+      doLogin();
+    });
+
+    loginNameInput.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        doLogin();
       }
     });
   }
